@@ -12,8 +12,8 @@ export type IterableCollection<T> = T[] | IterableIterator<T> | Dictionary<T>
 export interface ErrorCallback<E = Error> { (err?: E | null): void; }
 export interface AsyncBooleanResultCallback<E = Error> { (err?: E | null, truthValue?: boolean): void; }
 export interface AsyncResultCallback<T, E = Error> { (err?: E | null, result?: T): void; }
-export interface AsyncResultArrayCallback<T, E = Error> { (err?: E | null, results?: Array<T | undefined>): void; }
-export interface AsyncResultObjectCallback<T, E = Error> { (err: E | undefined, results: Dictionary<T | undefined>): void; }
+export interface AsyncResultArrayCallback<T, E = Error> { (err?: E | null, results?: Array<T> | undefined): void; }
+export interface AsyncResultObjectCallback<T, E = Error> { (err: E | undefined, results: Dictionary<T> | undefined): void; }
 
 export interface AsyncFunction<T, E = Error> { (callback: (err?: E | null, result?: T) => void): void; }
 export interface AsyncFunctionEx<T, E = Error> { (callback: (err?: E | null, ...results: T[]) => void): void; }
